@@ -59,6 +59,30 @@ good_bye(){
   echo -e "${MENU}***************** ${RED_TEXT}GOOD BYE ${MENU}******************${NORMAL}"
   echo -e "${MENU}*********************************************${NORMAL}"
 }
+live_monitor(){
+  NORMAL=`echo "\033[m"`
+  MENU=`echo "\033[36m"` #Blue
+  NUMBER=`echo "\033[33m"` #yellow
+  FGRED=`echo "\033[41m"`
+  RED_TEXT=`echo "\033[31m"`
+  ENTER_LINE=`echo "\033[33m"`
+  echo -e "${MENU}*********************************************${NORMAL}"
+  echo -e "${MENU}*************** Live Monitor ***************${NORMAL}"
+  echo -e "${MENU}*********************************************${NORMAL}"
+  echo -e "${MENU}${NUMBER} Time:${MENU} $time ${NORMAL}"
+  echo -e "${MENU}${NUMBER} CPU Utilization:${MENU} $utilCPU ${NORMAL}"
+  echo -e "${MENU}${NUMBER} Memory Utilization: ${MENU} $utilMem ${NORMAL}"
+  echo -e "${MENU}${NUMBER} Current Logged-in User:${MENU} $dateTime ${NORMAL}"
+  echo -e "${MENU}${NUMBER} OS Version:${MENU} $osVersion ${NORMAL}"
+  echo -e "${MENU}${NUMBER} Current User Name:${MENU} $userName ${NORMAL}"
+  echo -e "${MENU}*********************************************${NORMAL}"
+  echo -e "${RED_TEXT}Please enter 'q' and hit Enter to exit Live Monitor. ${NORMAL}"  
+  echo -e "${MENU}*********************************************${NORMAL}"
+  read quitChoice
+  
+  #write function that refreshes live_monitor until 'q' or 'Q' is typewhile quitChoice != 'q'
+ }
+
 clear
 show_banner
 echo " ";
@@ -126,7 +150,9 @@ while [ userChoice != '0' ]
         show_menu;
         ;;
 
-        0)exit;
+        0) clear;
+        good_bye
+        exit;
         ;;
 
       esac
