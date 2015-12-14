@@ -12,25 +12,25 @@ function show_banner{
         Date and time: $date_and_time\n
         OS Version: $osVersion\n
         User Name of party: $nameUser\n\n"
-  exit 1
+  exit 0
 }
 
 
 function list_active_procs{
   # do something
-  exit 2
+  exit 0
 }
 
 
 function monitor_active_procs{
   # do something
-  exit 3
+  exit 0
 }
 
 
 function live_monitor{
   # do something
-  exit 9
+  exit 0
 }
 
 
@@ -59,39 +59,39 @@ do
 
   read userIn
       
-    if [ userIn = "1" ]; then
+    if [ $userIn = "1" ]; then
         # list currently logged in users
 
-      elif [ userIn = "2" ]; then
+      elif [ $userIn = "2" ]; then
         echo -n "Please enter user name: "
         read userName
         # do something: list all active process
     
-      elif [ userIn = "3" ]; then
+      elif [ $userIn = "3" ]; then
         echo -n "Please enter user name: "
         read userName
         # do something: Monitor active processes
 
-      elif [ userIn = "4" ]; then
+      elif [ $userIn = "4" ]; then
         # do something
 
-      elif [ userIn = "5" ]; then 
+      elif [ $userIn = "5" ]; then 
         echo "Last 10 users logged in: "
         # call a for loop?
         # do something
 
-      elif [ userIn = "6" ]; then
+      elif [ $userIn = "6" ]; then
         # do someting
 
-      elif [ userIn = "7" ]; then
+      elif [ $userIn = "7" ]; then
         echo -n "Please enter user name: "
         read userName
         # do something: Show diskspace used by home dir.
 
-      elif [ userIn = "8" ]; then
+      elif [ $userIn = "8" ]; then
        # do something
 
-      elif [ userIn = "9" ]; then
+      elif [ $userIn = "9" ]; then
         # do someting: Live monitor
             # calls second script
             # (shows time, CPU util, current memory utilization, 
